@@ -9,7 +9,8 @@
     "email": ""
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "mocha": "^3.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0"
