@@ -5,3 +5,12 @@ steps:
 - task: Gulp@0
   inputs:
     publishJUnitResults: true
+- task: ArchiveFiles@1
+  inputs:
+    rootFolder: $(Build.SourceDirectory)
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    ArtifactName: drop
+    ArtifactType: Container
