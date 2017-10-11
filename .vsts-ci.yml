@@ -7,7 +7,7 @@ steps:
     publishJUnitResults: true
 - task: ArchiveFiles@1
   inputs:
-    rootFolder: $(Build.SourceDirectory)
+    rootFolder: $(Build.SourcesDirectory)
     archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
 - task: PublishBuildArtifacts@1
   inputs:
