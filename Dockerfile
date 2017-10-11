@@ -1,17 +1,15 @@
+# Create a container with the node app
+# This file is needed only if you plan to package the app as a container in your CI process
+
 FROM node:boron
 
 # Create app directory
 WORKDIR /app
 
-# Install app dependencies
-COPY package.json .
-# For npm@5 or later, copy package-lock.json as well
-# COPY package.json package-lock.json ./
-
-RUN npm install
-
-# Bundle app source
+# Copy files
 COPY . .
 
-EXPOSE 8080 80
-CMD [ "npm", "start" ]
+# Install app dependencies
+RUN npm install
+
+CMD ["npm", "start"]
