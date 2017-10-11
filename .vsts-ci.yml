@@ -1,0 +1,6 @@
+# YAML build definition for this app
+# This file is needed only when you want to model your build definitions using YAML
+steps:
+- script: |
+    npm install
+    gulp
