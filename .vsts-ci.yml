@@ -4,4 +4,4 @@ steps:
 - script: npm install
 - task: Gulp@0
   inputs:
-    publishJUnitTesults: true
+    publishJUnitResults: true
