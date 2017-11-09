@@ -19,4 +19,4 @@ sudo ln -s /opt/node/bin/npm /usr/local/bin/npm
 sudo npm install express -y
 
 # run server
-nodejs server.js
+nodejs server.js&
