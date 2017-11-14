@@ -19,7 +19,7 @@ sudo ln -fs /opt/node/bin/node /usr/local/bin/node
 sudo ln -fs /opt/node/bin/npm /usr/local/bin/npm
 
 # install express
-sudo npm install express -y
+sudo npm install express -y -g
 
 # install nginx
 sudo apt-get install nginx -y
