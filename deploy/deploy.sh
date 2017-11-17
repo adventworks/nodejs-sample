@@ -13,6 +13,7 @@ sudo apt-get install build-essential -y
 sudo npm install express -y -g
 popd
 
+
 # configure nginx
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo cp -f ./nginx-config /etc/nginx/sites-available/example
