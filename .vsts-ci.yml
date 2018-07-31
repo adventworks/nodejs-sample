@@ -1,19 +1,25 @@
-# YAML build definition for this app
-# This file is needed only when you want to model your build definitions using YAML
+# Node.js with gulp
+# Build a Node.js application using the gulp task runner.
+# https://aka.ms/yaml
+queue: 'Hosted Linux Preview'
 steps:
-- script: npm install
+#  - task: NodeTool@0
+#    inputs:
+#      versionSpec: '8.x' 
 
-- task: gulp@0
-  inputs:
-    publishJUnitResults: true
+  - task: Npm@1
+    inputs:
+      command: 'install'
 
-- task: archiveFiles@1
-  inputs:
-    rootFolder: $(Build.SourcesDirectory)
-    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+  - task: Gulp@0
+    inputs:
+      gulpFile: 'gulpfile.js'
+      targets: ''
+      publishJUnitResults: true
 
-- task: publishBuildArtifacts@1
-  inputs:
-    PathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-    ArtifactName: drop
-    ArtifactType: Container
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+      includeRootFolder: false
+
+  - task: PublishBuildArtifacts@1
